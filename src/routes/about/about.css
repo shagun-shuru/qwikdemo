@@ -1,0 +1,7 @@
+article {
+  background-color: white;
+  padding: 20px;
+  border-radius: 0, 5rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
