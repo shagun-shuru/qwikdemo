@@ -1,9 +1,5 @@
 import { component$, Resource, useResource$ } from "@builder.io/qwik";
-import {
-  RequestHandler,
-  useLocation,
-  useNavigate,
-} from "@builder.io/qwik-city";
+import { useLocation, type RequestHandler } from "@builder.io/qwik-city";
 
 interface BlogData {
   id: string;
@@ -25,11 +21,10 @@ export default component$(() => {
   const location = useLocation();
   const id = location.params.id;
 
-  const navigate = useNavigate();
-  const blogDetails = useResource$(async ({}) => {
+  const blogDetails = useResource$(async () => {
     console.log("fetching blog details");
     const response = await fetch(
-      "https://jsonplaceholder.typicode.com/posts/" + id
+      "https://jsonplaceholder.typicode.com/posts/" + id,
     );
 
     const data = await response.json();
@@ -42,8 +37,8 @@ export default component$(() => {
         onPending={() => <div>Loading...</div>}
         onResolved={(blogData: BlogData) => (
           <div>
-            <h2>{blogData?.title}</h2>
-            <p>{blogData?.body}</p>
+            <h2>{blogData.title}</h2>
+            <p>{blogData.body}</p>
           </div>
         )}
       />

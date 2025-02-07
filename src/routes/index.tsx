@@ -5,7 +5,7 @@ import {
   useSignal,
   useStore,
 } from "@builder.io/qwik";
-import { Link, routeLoader$ } from "@builder.io/qwik-city";
+import { Link } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Card from "~/components/card/card";
 import { QGreetings } from "~/integrations/react/greeting";

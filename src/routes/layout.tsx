@@ -1,6 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
 import Header from "../components/header/header";
-import { routeLoader$ } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
